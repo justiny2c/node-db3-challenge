@@ -29,4 +29,13 @@ inner join employees as e on o.employeeId = e.employeeId
 
 ### (Stretch)  Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 9 records.
 
+SELECT categoryname, count(productname) FROM products
+inner join categories
+on products.categoryid = categories.categoryid
+group by categoryname
+
 ### (Stretch) Display OrderID and a  column called ItemCount that shows the total number of products placed on the order. Shows 196 records. 
+
+select orderId and sum(quantity) as ItemCount
+from orderDetails
+group by OrderID
